@@ -2,7 +2,7 @@ import React from 'react'
 
 const Store = configureStore({
     reducer: {
-        user: userReducer
+        userx: userReducer
     }
 })
 
