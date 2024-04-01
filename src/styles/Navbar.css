@@ -1,0 +1,24 @@
+.navbar-brand{
+    text-transform: uppercase;
+    /* width:30%; */
+    margin: auto;
+    padding: 0.5em;
+    width:80%;
+}
+.navbar-brand strong{
+    font-size: 1.5em;
+}
+
+.navbar-nav {
+    margin: 0.5em auto;
+}
+
+ .navbar-nav li {
+    display: inline;
+}
+
+.nav-link{
+    display:inline;
+    float: right;
+    font-size: 120%;
+} 

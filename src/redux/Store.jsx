@@ -1,9 +1,11 @@
-import React from 'react'
+// import React from 'react'
+import  userReducer  from './UserReducers'
+import { configureStore } from '@reduxjs/toolkit'
 
-const Store = configureStore({
+export const store = configureStore({
     reducer: {
         userx: userReducer
     }
 })
 
-export default Store
+export default store

@@ -1,4 +1,3 @@
-import React from 'react'
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState ={
@@ -9,12 +8,12 @@ const initialState ={
     number: "",
 }
 
-const UserSlice = createSlice({
+const userSlice = createSlice({
     name: "users", 
     initialState,
     reducers: {
-        
+
     }
 })
 
-export default UserSlice
+export default userSlice
