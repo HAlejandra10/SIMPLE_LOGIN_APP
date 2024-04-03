@@ -2,12 +2,13 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Login from './components/Login'
+import Register from './components/Register'
 
 const Rutas = () => {
   return (
     <Routes>
     <Route path="/login" element={<Login />}/>
-   {/*<Route path="/register" element={<SignUp />}/> */}
+   <Route path="/register" element={<Register />}/>
   {/* <Route element={<ProtectedRoutes />}> */}
   <Route path="/" element={<Home />}/>
   {/* <Route path="/create" element={<Create />}/>
