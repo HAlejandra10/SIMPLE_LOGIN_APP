@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
     MDBBtn,
   MDBContainer,
@@ -19,16 +19,28 @@ const Register = () => {
     confirmPassword: "",
     // terms: false
 })
+
+ const handleSubmit = (event) => {
+  event.preventDefault();
+  // console.log(input);
+  localStorage.setItem("user", JSON.stringify(input));
+  navigate("/login")
+ }
+
+
   return (
     <MDBContainer className="registerform">
     <MDBRow className='box'>
         <MDBCol col='4' md='7'>
     
             <h1 className='signUp'> Sign Up:</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <MDBInput 
           name="name"
-          
+          value={input.name}
+          onChange={(e) => setInput({
+            ...input,
+             [e.target.name]: e.target.value })} 
           wrapperClass='mb-4' 
           label='Name' 
           id='form1'  
@@ -36,31 +48,43 @@ const Register = () => {
           />
           <MDBInput 
            name="username"
-          
+           onChange={(e) => setInput({
+            ...input,
+             [e.target.name]: e.target.value })} 
+          value={input.username}
           wrapperClass='mb-4' 
           label='Username' 
           id='form1' 
           type='text'
           /> 
           <MDBInput 
-           name="email"
-          
+          name="email"
+          value={input.email}
+          onChange={(e) => setInput({
+            ...input,
+             [e.target.name]: e.target.value })} 
           wrapperClass='mb-4' 
           label='Email' 
           id='form1' 
           type='email'
           />
           <MDBInput
-           name="password"
-           
+          name="password"
+          value={input.password}
+          onChange={(e) => setInput({
+            ...input,
+             [e.target.name]: e.target.value })} 
           wrapperClass='mb-4' 
           label='Password' 
           id='form1' 
           type='password'/>
 
         <MDBInput
-           name="confirmPassword"
-          
+          name="confirmPassword"
+          value={input.confirmPassword}
+          onChange={(e) => setInput({
+            ...input,
+             [e.target.name]: e.target.value })} 
           wrapperClass='mb-4' 
           label='Confirm Password' 
           id='form1' 
