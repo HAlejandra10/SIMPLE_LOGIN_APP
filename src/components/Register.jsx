@@ -11,6 +11,7 @@ import {
   import "../styles/Register.css";
 
 const Register = () => {
+  const navigate = useNavigate()
   const [input, setInput] = useState({
     name: "", 
     username: "",
@@ -24,7 +25,7 @@ const Register = () => {
   event.preventDefault();
   // console.log(input);
   localStorage.setItem("user", JSON.stringify(input));
-  navigate("/login")
+  navigate("/")
  }
 
 
@@ -100,7 +101,7 @@ const Register = () => {
           <p className='text-center text-muted mt-2 mb-0'>
             Have already an account   <br/>
          
-            <Link to="/" className='fw-bold text-body mb-4'>
+            <Link to="/login" className='fw-bold text-body mb-4'>
               Login Here
             </Link>
           </p>

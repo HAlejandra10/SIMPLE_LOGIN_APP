@@ -8,7 +8,7 @@ import ProtectedRoutes from './services/ProtetedRoutes'
 const Rutas = () => {
   return (
     <Routes>
-    <Route path="/" element={<Login />}/>
+    <Route path="/login" element={<Login />}/>
    <Route path="/register" element={<Register />}/>
    <Route element={<ProtectedRoutes />}> 
   <Route path="/" element={<Home />}/>
