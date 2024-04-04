@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import {
     MDBBtn,
@@ -11,6 +11,14 @@ import {
   import "../styles/Register.css";
 
 const Register = () => {
+  const [input, setInput] = useState({
+    name: "", 
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    // terms: false
+})
   return (
     <MDBContainer className="registerform">
     <MDBRow className='box'>
@@ -68,7 +76,7 @@ const Register = () => {
           <p className='text-center text-muted mt-2 mb-0'>
             Have already an account   <br/>
          
-            <Link to="/login" className='fw-bold text-body mb-4'>
+            <Link to="/" className='fw-bold text-body mb-4'>
               Login Here
             </Link>
           </p>

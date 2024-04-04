@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "../styles/Login.css"
 
 
 const Login = () => {
+  const navigate =useNavigate();
+  const [input ,setInput] = useState({
+    email: "", 
+    password: "",
+  });
+ 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // console.log(input);
+    const loggeduser = JSON.parse(localStorage.getItem("user"));
+    if(
+      input.email === loggeduser.email &&
+      input.password === loggeduser.password 
+      ){
+        localStorage.setItem("loggedin", true);
+        navigate("/")
+      }else{
+        alert("Wrong Email or Password")
+      }
+  }
+
   return (
     <MDBContainer fluid className="loginform">
     
@@ -15,12 +36,20 @@ const Login = () => {
             </MDBCol>
             <MDBCol col='5' md='8'>
                         <h1 className='login'>LOGIN</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
               <MDBInput 
                name="email"
+               value={input.email}
+               onChange={(e) => setInput({
+                ...input,
+                 [e.target.name]: e.target.value })} 
               wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
               <MDBInput 
                name="password"
+               value={input.password}
+               onChange={(e) => setInput({
+                ...input, [e.target.name]: e.target.value
+               })}
               wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
     
               <div className="d-flex justify-content-between mb-3">
