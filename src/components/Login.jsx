@@ -20,7 +20,7 @@ const Login = () => {
       input.password === loggeduser.password 
       ){
         localStorage.setItem("loggedin", true);
-        navigate("/")
+        navigate("/home")
       }else{
         alert("Wrong Email or Password")
       }

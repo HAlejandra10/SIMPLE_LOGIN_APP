@@ -12,8 +12,8 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
         <a className="nav-link active" aria-current="page" href="/">Home</a>
-        <a className="nav-link" href="/create">Features</a>
-        <a className="nav-link" href="/edit/:id">Pricing</a>
+        <a className="nav-link" href="/create">Create</a>
+        <a className="nav-link" href="/edit/:id">Edit</a>
         {/* <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> */}
       </div>
     </div>
