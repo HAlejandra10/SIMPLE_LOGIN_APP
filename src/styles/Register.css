@@ -16,8 +16,8 @@
 
 .signUp{
     text-align: center;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
+    padding-bottom: 0.1em;
+    margin-bottom: 0.8em;
 }
 
 
@@ -28,10 +28,10 @@
   
   }
 
-.loginform{
-    padding:5em; 
+.registerform{
+    padding:3em; 
     margin-top: 0.5em; 
     height: center;
-    width: 100%;
+    width: 80%;
     align-items: center;
   }

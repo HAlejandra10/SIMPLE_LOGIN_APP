@@ -12,7 +12,7 @@ import {
 
 const Register = () => {
   return (
-    <MDBContainer className="loginform">
+    <MDBContainer className="registerform">
     <MDBRow className='box'>
         <MDBCol col='4' md='7'>
     
@@ -65,9 +65,10 @@ const Register = () => {
 
           <MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
 
-          <p className='text-center text-muted mt-5 mb-0'>
-            Have already an account
-            <Link to="/login" className='fw-bold text-body'>
+          <p className='text-center text-muted mt-2 mb-0'>
+            Have already an account   <br/>
+         
+            <Link to="/login" className='fw-bold text-body mb-4'>
               Login Here
             </Link>
           </p>
