@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import { Link } from 'react-router-dom'
 // import Login from './components/Login'
 import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { addUser } from './redux/UserReducers'
 
 const Home = () => {
   const users =useSelector((state) => state.users)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+     .then((res) => res.json())
+     .then((data) =>  dispatch(addUser(data))
+       //console.log(data)
+      )
+     .catch((err) => console.log(err)
+)
+  }, [])
   return (
     <>
     <Navbar />

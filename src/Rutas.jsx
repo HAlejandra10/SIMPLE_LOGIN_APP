@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import ProtectedRoutes from './services/ProtetedRoutes'
 import Create from './components/Create'
+import Update from './components/Update'
 
 const Rutas = () => {
   return (
@@ -14,7 +15,7 @@ const Rutas = () => {
    <Route element={<ProtectedRoutes />}> 
   <Route path="/" element={<Home />}/>
   <Route path="/create" element={<Create />}/>
-  {/* <Route path="/edit/:id" element={<Update />}/>  */}
+  <Route path="/edit/:id" element={<Update />}/> 
   </Route>
 
 {/* <Route path="/edit/:id" element={<Create />}/> */}
